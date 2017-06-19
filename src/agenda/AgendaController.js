@@ -1,3 +1,5 @@
+import _ from "lodash";
+
 class AgendaController {
     constructor(api) {
         this.filtroPorNome = '',
@@ -36,3 +38,5 @@ class AgendaController {
 }
 
 AgendaController.$inject = ["api"];
+
+export default AgendaController;

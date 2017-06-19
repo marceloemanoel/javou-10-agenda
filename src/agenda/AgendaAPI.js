@@ -1,4 +1,4 @@
-class AgendaApi {
+export default class AgendaApi {
     constructor($http) {
         this.$http = $http;
     }
