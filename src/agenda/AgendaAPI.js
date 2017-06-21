@@ -10,12 +10,12 @@ export default class AgendaApi {
                 '_limit': 10
             }
         };
-        return this.$http.get('/contatos', params)
+        return this.$http.get('/api/contatos', params)
             .then(response => response.data);
     }
 
     getContato(contatoId) {
-        return this.$http.get(`/contatos/${contatoId}`)
+        return this.$http.get(`/api/contatos/${contatoId}`)
             .then(response => response.data);
     }
 }
