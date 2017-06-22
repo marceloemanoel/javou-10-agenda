@@ -1,0 +1,31 @@
+{
+  "name": "agenda",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "angular": "^1.6.4",
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.0",
+    "babel-preset-env": "^1.5.2",
+    "json-server": "^0.10.1",
+    "lodash": "^4.17.4",
+    "materialize-css": "^0.98.2",
+    "webpack": "^2.6.1",
+    "webpack-dev-server": "^2.5.0"
+  },
+  "devDependencies": {
+    "json-server": "^0.10.1"
+  },
+  "scripts": {
+    "start": "json-server --static .  --ng --watch db.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/marceloemanoel/javou-10-agenda.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/marceloemanoel/javou-10-agenda#readme"
+}
