@@ -5,7 +5,7 @@
     "prebuild": "rm -rf dist && mkdir dist",
     "build": "webpack -p",
     "prestart": "npm run prebuild && npm run api:start &",
-    "start": "webpack-dev-server --colors --hot --inline --watch",
+    "start": "webpack-dev-server --colors --hot --inline --watch --port $PORT",
     "api:start": "json-server --watch db.json"
   },
   "devDependencies": {
