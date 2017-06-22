@@ -18,7 +18,7 @@
     "json-server": "^0.10.1"
   },
   "scripts": {
-    "start": "json-server --static .  --ng --watch db.json"
+    "start": "json-server --static .  --ng --watch db.json --port $PORT"
   },
   "repository": {
     "type": "git",
