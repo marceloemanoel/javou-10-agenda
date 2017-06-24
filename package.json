@@ -1,6 +1,9 @@
 {
   "name": "agenda",
   "version": "1.0.0",
+  "engines": {
+    "node": "7.10.0"
+  },
   "scripts": {
     "prebuild": "rm -rf dist && mkdir dist",
     "build": "webpack -p --config webpack.prod.config.js",
