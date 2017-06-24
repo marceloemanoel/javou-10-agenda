@@ -79,6 +79,7 @@ module.exports = {
       jQuery: "jquery",
       "window.jQuery": "jquery"
     }),
+    new webpack.optimize.ModuleConcatenationPlugin(),
     new webpack.optimize.UglifyJsPlugin({
       debug: false,
       minimize: true,
