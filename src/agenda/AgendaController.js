@@ -3,13 +3,18 @@ class AgendaController {
         this.filtroPorNome = '',
         this.ordenacao = 'nome';
         this.listaDeContatos = undefined;
-        this.contato = { nome: "Contato", sobrenome: "", email: "fake@contato.com"};
+        this.contato = { nome: "Contato", sobrenome: "", email: "fake@contato.com" };
         this.idSelecionado = undefined;
 
         this.api = api;
         this.filtroPorNomeMudou(); // inital data load
     }
 
+    $onInit() {
+        angular.element(document).ready(() => {
+            $("select").material_select();
+        });
+    }
     filtroPorNomeMudou() {
         this.filtrar(this.filtroPorNome)
     }

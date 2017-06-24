@@ -4,9 +4,6 @@ body {
 .container {
     width: 90%;
 }
-select {
-  display: inherit;
-}
 
 nav {
   height: 64px;

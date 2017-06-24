@@ -2,26 +2,27 @@
             <div class="card-content">
                 <div class="card-title">Agenda</div>
                 <form class="row" autocomplete="off">
-                    <div class="col s6">
-                        <label for="filtroPorNome">Contato</label>
+                    <div class="input-field  col s6">
                         <input
                             id="filtroPorNome"
                             type="text"
                             ng-model="$ctrl.filtroPorNome"
                             ng-change="$ctrl.filtroPorNomeMudou()"
                         >
+                        <label for="filtroPorNome">Contato</label>
                     </div>
-                    <div class="col s6">
-                        <label for="ordenacao">Ordernar por</label>
+                    <div class="input-field col s6">
                         <select
                             id="ordernacao"
                             type="text"
                             ng-model="$ctrl.ordenacao"
                             ng-change="$ctrl.ordenacaoMudou()"
                         >
+                            <option value="" selected disabled>Selecione um critério de ordenação</option>
                             <option value="nome">Nome</option>
                             <option value="sobrenome">Sobrenome</option>
                         </select>
+                        <label for="ordenacao">Ordernar por</label>
                     </div>
                 </form>
                 <contato ng-model="$ctrl.contato"></contato>
