@@ -81,6 +81,10 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin(),
+        new webpack.ProvidePlugin({
+      jQuery: "jquery",
+      "window.jQuery": "jquery"
+    }),
     new webpack.optimize.UglifyJsPlugin({
       debug: false,
       minimize: true,

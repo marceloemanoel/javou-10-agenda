@@ -75,8 +75,9 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin(),
     new ExtractTextPlugin("[name].css"),
-    new PurifyCSSPlugin({
-      paths: glob.sync(path.join(__dirname, 'src/**/*.html')),
+    new webpack.ProvidePlugin({
+      jQuery: "jquery",
+      "window.jQuery": "jquery"
     }),
     new webpack.optimize.UglifyJsPlugin({
       debug: false,
