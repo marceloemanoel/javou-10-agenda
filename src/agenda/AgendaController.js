@@ -1,4 +1,5 @@
 import _ from "lodash";
+import "materialize-css/dist/js/materialize.js";
 
 class AgendaController {
     constructor(api) {
@@ -19,6 +20,16 @@ class AgendaController {
     filtrar(texto) {
         this.carregando = true;
         this.api.getAgenda(texto)
+            .then(contatos => _.sortBy(contatos, this.ordenacao))
+            .then(contatosOrdernados => {
+                this.carregando = false;
+                this.listaDeContatos = contatosOrdernados;
+            });
+    }
+
+    getContatosPorSobrenome(letra) {
+        this.carregando = true;
+        this.api.getContatosPorSobrenome(letra)
             .then(contatos => _.sortBy(contatos, this.ordenacao))
             .then(contatosOrdernados => {
                 this.carregando = false;

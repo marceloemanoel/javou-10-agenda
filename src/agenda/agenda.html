@@ -2,7 +2,7 @@
             <div class="card-content">
                 <div class="card-title">Agenda</div>
                 <form class="row" autocomplete="off">
-                    <div class="col s6">
+                    <div class="input-field col s6">
                         <label for="filtroPorNome">Contato</label>
                         <input
                             id="filtroPorNome"
@@ -11,23 +11,23 @@
                             ng-change="$ctrl.filtroPorNomeMudou()"
                         >
                     </div>
-                    <div class="col s6">
-                        <label for="ordenacao">Ordernar por</label>
+                    <div class="input-field col s6">
                         <select
                             id="ordernacao"
                             type="text"
                             ng-model="$ctrl.ordenacao"
                             ng-change="$ctrl.ordenacaoMudou()"
                         >
+                            <option value="" disabled selected>Selecione um critério de ordenação</option>
                             <option value="nome">Nome</option>
                             <option value="sobrenome">Sobrenome</option>
                         </select>
+                        <label for="ordenacao">Ordernar por</label>
                     </div>
                 </form>
-                <contato ng-model="$ctrl.contato"></contato>
                 <ul class="selecao_rapida">
                     <li ng-repeat='letra in "ABCDEFGHIJKLMNOPQRSTUVWXYZ"'>
-                        <a href="#" ng-click="$ctrl.filtrar(letra)">{{letra}}</a>
+                        <a href="#" ng-click="$ctrl.getContatosPorSobrenome(letra)">{{letra}}</a>
                     </li>
                 </ul>
             </div>

@@ -14,6 +14,7 @@ module.exports = {
     path: path.resolve("./dist"),
     filename: "aplicacao.js"
   },
+  devtool: "eval-source-map",
   devServer: {
     port: 8000,
     proxy: {

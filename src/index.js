@@ -1,6 +1,8 @@
 import angular from "angular";
 import AgendaController from "./agenda/AgendaController";
 import AgendaApi from "./agenda/AgendaApi";
+import "jquery";
+import "materialize-css/dist/js/materialize.js";
 
 import "materialize-css/dist/css/materialize.css";
 import "./style.css";
@@ -27,4 +29,5 @@ angular.element(document).ready(() => {
     app.appendChild(document.createElement("agenda"));
     document.body.appendChild(app);
     angular.bootstrap(app, ["app"]);
+    $('select').material_select();
 });
