@@ -36,7 +36,5 @@ class AgendaController {
             .then(c => this.contato = c);
     }
 }
-
 AgendaController.$inject = ["api"];
-
 export default AgendaController;

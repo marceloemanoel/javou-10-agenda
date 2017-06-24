@@ -2,15 +2,29 @@ import angular from "angular";
 import AgendaController from "./agenda/AgendaController";
 import AgendaApi from "./agenda/AgendaApi";
 
+import "materialize-css/dist/css/materialize.css";
+import "./style.css";
+
+const contatoTemplate = require("./agenda/contato.html");
+const agendaTemplate = require("./agenda/agenda.html");
+
 angular.module('app', [])
     .service('api', AgendaApi)
     .component('contato', {
-        templateUrl: 'src/agenda/contato.html',
+        templateUrl: contatoTemplate,
         bindings: {
             ngModel: '<'
         }
     })
     .component('agenda', {
-        templateUrl: 'src/agenda/agenda.html',
+        templateUrl: agendaTemplate,
         controller: AgendaController
     });
+
+angular.element(document).ready(() => {
+    const app = document.createElement("div");
+    app.className = "container";
+    app.appendChild(document.createElement("agenda"));
+    document.body.appendChild(app);
+    angular.bootstrap(app, ["app"]);
+});
