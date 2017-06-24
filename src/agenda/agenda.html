@@ -11,24 +11,23 @@
                         >
                         <label for="filtroPorNome">Contato</label>
                     </div>
-                    <div class="input-field col s6">
+                    <div class="col s6">
+                        <label for="ordenacao">Ordernar por</label>
                         <select
                             id="ordernacao"
                             type="text"
                             ng-model="$ctrl.ordenacao"
                             ng-change="$ctrl.ordenacaoMudou()"
                         >
-                            <option value="" selected disabled>Selecione um critério de ordenação</option>
-                            <option value="nome">Nome</option>
+                            <option value="nome" selected>Nome</option>
                             <option value="sobrenome">Sobrenome</option>
                         </select>
-                        <label for="ordenacao">Ordernar por</label>
                     </div>
                 </form>
                 <contato ng-model="$ctrl.contato"></contato>
                 <ul class="selecao_rapida">
                     <li ng-repeat='letra in "ABCDEFGHIJKLMNOPQRSTUVWXYZ"'>
-                        <a href="#" ng-click="$ctrl.filtrar(letra)">{{letra}}</a>
+                        <a href="#" ng-click="$ctrl.getContatosPorSobrenome(letra)">{{letra}}</a>
                     </li>
                 </ul>
             </div>
@@ -56,7 +55,7 @@
                         <td>{{contato.sobrenome}}</td>
                         <td>{{contato.email}}</td>
                     </tr>
-                    <tbody
+                    <tbody>
                 </table>
             </div>
         </section>

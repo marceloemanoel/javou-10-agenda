@@ -5,6 +5,10 @@ body {
     width: 90%;
 }
 
+select {
+    display: inline-block;
+}
+
 nav {
   height: 64px;
   line-height: 64px;

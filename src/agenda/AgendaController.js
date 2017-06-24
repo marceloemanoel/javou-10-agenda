@@ -1,6 +1,6 @@
 class AgendaController {
     constructor(api) {
-        this.filtroPorNome = '',
+        this.filtroPorNome = '';
         this.ordenacao = 'nome';
         this.listaDeContatos = undefined;
         this.contato = { nome: "Contato", sobrenome: "", email: "fake@contato.com" };
@@ -10,11 +10,6 @@ class AgendaController {
         this.filtroPorNomeMudou(); // inital data load
     }
 
-    $onInit() {
-        angular.element(document).ready(() => {
-            $("select").material_select();
-        });
-    }
     filtroPorNomeMudou() {
         this.filtrar(this.filtroPorNome)
     }
@@ -22,6 +17,16 @@ class AgendaController {
     filtrar(texto) {
         this.carregando = true;
         this.api.getAgenda(texto)
+            .then(contatos => _.sortBy(contatos, this.ordenacao))
+            .then(contatosOrdernados => {
+                this.carregando = false;
+                this.listaDeContatos = contatosOrdernados;
+            });
+    }
+
+    getContatosPorSobrenome(letra) {
+        this.carregando = true;
+        this.api.getContatosPorSobrenome(letra)
             .then(contatos => _.sortBy(contatos, this.ordenacao))
             .then(contatosOrdernados => {
                 this.carregando = false;
